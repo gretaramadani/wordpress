@@ -5,4 +5,16 @@ function load_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'load_scripts');
+
+function config() {
+    register_nav_menus(
+    array(
+        'wp_devs_main_menu' => 'Main Menu', 
+        'wp_devs_footer_menu' => 'Footer Menu'
+    ));
+}
+
+add_action('after_setup_theme', 'config', 0);
+
+
 ?>
